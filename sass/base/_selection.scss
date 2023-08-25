@@ -1,0 +1,7 @@
+@use "../utils/variables";
+
+/* Selection */
+::selection {
+   background-color: rgba(variables.$secondary, .8);
+   color: variables.$white;
+}

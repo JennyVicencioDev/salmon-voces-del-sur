@@ -1,0 +1,15 @@
+@use "../utils/variables";
+
+section {
+   padding: 3rem 0;
+}
+
+.btn-readmore {
+   &::after {
+      content: ' Leer más';
+   }
+
+   &.show::after {
+      content: ' Leer menos';
+   }
+}

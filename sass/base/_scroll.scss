@@ -1,0 +1,35 @@
+@use "../utils/variables";
+
+/* Scroll */
+::-webkit-scrollbar {
+   height: 12px;
+   width: 12px;
+
+   .modal & {
+      position: absolute;
+      right: 2rem;
+   }
+}
+
+::-webkit-scrollbar-thumb {
+   background: rgba(variables.$black, .5);
+   border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:active,
+::-webkit-scrollbar-thumb:hover {
+   background: rgba(variables.$black, .6);
+}
+::-webkit-scrollbar-track {
+   background: rgba(variables.$gray, 1);
+   main & {
+      border: none;
+      border-radius: 20px;
+      // border: 2px solid transparent;
+      // background-clip: content-box;
+   }
+
+   .modal & {
+      border: none;
+      border-radius: 20px;
+   }
+}

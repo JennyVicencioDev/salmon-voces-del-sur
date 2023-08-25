@@ -1,0 +1,114 @@
+@use "../utils/variables";
+
+@keyframes fixedLogo {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+.main-header {
+	position: relative;
+	color: variables.$white;
+	&::after {
+		content: '';
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 24.04%, rgba(0, 0, 0, 0.00) 30.73%, rgba(0, 0, 0, 0.80) 70.31%);
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 0;
+		pointer-events: none;
+	}
+	
+	$headerLogoHeightMOB: 32px;
+	&__logo {
+		background-color: rgba(variables.$black , 0.8);
+		padding: .5rem;
+
+		a {
+			display: block;
+			margin-right: auto;
+			text-align: left;
+		}
+
+		img {
+			height: $headerLogoHeightMOB;
+			width: auto;
+		}
+
+		&.fixed-logo {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(variables.$black , 0.8);
+			z-index: 10;
+			animation: fixedLogo .25s linear forwards;
+		}
+	}
+
+	&__bg {
+		
+		img {
+			width: 100%;
+			object-fit: cover;
+			object-position: top center;
+			height: calc(100vh - $headerLogoHeightMOB - (.5rem * 2));
+		}
+	}
+
+	&__text {
+		padding: 2rem;
+		position: absolute;
+		bottom: 0;
+		z-index: 1;
+	}
+	@media screen and (min-width: 768px) {
+		&__bg {
+		
+			img {
+				height: auto;
+			}
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		&::after {
+			background: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 24.04%, rgba(0, 0, 0, 0.00) 30.73%, rgba(0, 0, 0, 0.80) 70.31%);
+		}
+		
+		$headerImageHeightDT: 48px;
+		&__logo {
+			background-color: transparent;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+
+			img {
+				height: $headerImageHeightDT;
+			}
+		}
+		&__text {
+			padding: 3rem 1.5rem;
+			bottom: calc(50% - ($headerImageHeightDT/2) - .5rem * 2);
+			transform: translateY(50%);
+			width: 100%;
+		}
+	}
+
+	@media screen and (min-width: 992px) {
+		&__text {
+
+			p {
+				font-size: 1.5rem;
+			}
+		}
+	}
+}

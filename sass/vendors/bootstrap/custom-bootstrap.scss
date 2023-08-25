@@ -1,0 +1,70 @@
+/*!
+ * Bootstrap v5.2.3 (https://getbootstrap.com/)
+ * Copyright 2011-2022 The Bootstrap Authors
+ * Copyright 2011-2022 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/blob/main/LICENSE)
+ */
+
+// Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "functions";
+
+// Include remainder of required Bootstrap stylesheets
+@import "variables";
+
+// Include any default variable overrides here
+@import "variables-overrides";
+
+// Include remainder of required parts
+@import "maps";
+@import "mixins";
+@import "root";
+
+// Include any optional Bootstrap CSS as needed
+@import "utilities";
+@import "reboot";
+@import "type";
+@import "images";
+@import "containers";
+@import "grid";
+@import "tables";
+@import "forms";
+@import "buttons";
+
+// crea botones blanco y negro
+@each $color, $value in (
+   "white": $white,
+   "black": $black,
+   ) {
+   .btn-#{$color} {
+      @include button-variant($value, $value);
+   }
+}
+
+@import "transitions";
+@import "dropdown";
+@import "button-group";
+@import "nav";
+@import "navbar";
+@import "card";
+@import "accordion";
+@import "breadcrumb";
+@import "pagination";
+@import "badge";
+@import "alert";
+@import "progress";
+@import "list-group";
+@import "close";
+@import "toasts";
+@import "modal";
+@import "tooltip";
+@import "popover";
+// @import "carousel";
+@import "spinners";
+@import "offcanvas";
+@import "placeholders";
+
+// Helpers
+@import "helpers";
+
+// Utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "utilities/api";

@@ -1,0 +1,36 @@
+// Paleta Tema
+$orange:  #F27115;
+$yellow:  #FFB83F;
+
+$black: #000;
+$white: #fff;
+$gray: #878B97;
+$gray-text: #595F6F;
+
+
+$body-text: $gray-text;
+
+$primary: $orange;
+$secondary: $yellow;
+
+// breakpoints
+$sm: #{'min-width: 576px'};
+$md: #{'min-width: 768px'};
+$lg: #{'min-width: 992px'};
+$xl: #{'min-width: 1200px'};
+$xxl: #{'min-width: 1400px'};
+$xxxl: #{'min-width: 1920px'};
+
+$breakpoints: (
+  'sm': screen and ($sm),
+  'md': screen and ($md),
+  'lg': screen and ($lg),
+  'xl': screen and ($xl),
+  'xxl': screen and ($xxl),
+  'xxxl': screen and ($xxxl),
+);
+
+
+
+
+

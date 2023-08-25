@@ -1,0 +1,56 @@
+@use "../utils/variables";
+
+.main-footer {
+   background-color: variables.$yellow;
+   color: variables.$white;
+   padding: 1rem 0;
+
+   &__logos {
+      li {
+         padding: .25rem;
+      }
+
+      img {
+         height: 50px;
+         width: auto;
+         max-width: 100%;
+      }
+
+      @media screen and (min-width: 992px) {
+         li {
+            padding: .5rem;
+         }
+      }
+   }
+
+   &__social {      
+      li {
+         padding: .25rem;
+      }
+
+      img {
+         height: 36px;
+         width: 36px;
+      }
+
+      @media screen and (min-width: 992px) {
+         li {
+            padding: .5rem;
+         }
+
+         img {
+            height: 42px;
+            width: 42px;
+         }
+      }
+   }
+
+   ul {
+      margin-bottom: 0;
+      padding-left: 0;
+      text-align: center;
+      li {
+         display: inline-block;
+      }
+   }
+}

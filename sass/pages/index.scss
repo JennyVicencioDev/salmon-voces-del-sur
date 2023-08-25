@@ -1,0 +1,248 @@
+@use "../utils/variables";
+
+// Voces
+.voces {
+   &-cards-container {
+      padding: 1rem 0;
+
+      .flickity-slider {
+         & > div {
+            max-width: 100%;
+         }
+      }
+
+      @media screen and (min-width: 992px) {
+         padding: 1rem;
+      }
+   }
+}
+
+.voz-card {
+   &--hover {
+      position: relative;
+      border-radius: 20px;
+      height: 350px;
+      width: 250px;
+      max-width: 100%;
+      overflow: hidden;
+
+      .voz-card-image {
+         position: relative;
+         top: 0;
+         height: 100%;
+         width: 100%;
+         z-index: 0;
+         img {
+            height: inherit;
+            width: inherit;
+            object-fit: cover;
+            transition: all 0.3s ease-in-out;
+         }
+      }
+      .voz-card-text {
+         background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 120%), transparent 0% / cover no-repeat;
+         color: variables.$white;
+         padding: 1.5rem;
+         position: absolute;
+         bottom: 0%;
+         height: 100%;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-end;
+         transition: display 0.3s 1s ease visibility 0.3s ease;
+         z-index: 1;
+         .title, .time {
+            font-weight: 700;
+         }
+         .desc {
+            display: none;
+            margin-top: 1rem;
+            a {
+               color: variables.$white;
+               font-weight: 700;
+               text-decoration: underline;
+               cursor: pointer;
+            }
+         }
+      }
+      &:hover {
+         .voz-card-image {
+            img {
+               height: 120%;
+               width: 120%;
+            }
+         }
+         .voz-card-text {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 70%), transparent 50% / cover no-repeat;
+            justify-content: flex-end;
+            bottom: 0%;
+
+            .desc {
+               display: block;
+            }
+         }
+      }
+   }
+
+   &--nohover {
+      position: relative;
+      border-radius: 20px;
+      // height: 320px;
+      width: 320px;
+      max-width: 100%;
+      overflow: hidden;
+
+      .voz-card-image {
+         height: 160px;
+         width: 100%;
+         img {
+            border-radius: 20px;
+            height: inherit;
+            width: inherit;
+            object-fit: cover;
+         }
+      }
+      .voz-card-text {
+         padding: 1rem 0;
+         height: 100%;
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-start;
+         .title, .time {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0;
+         }
+         .desc {
+            p {
+               color: variables.$body-text;
+
+            }
+            a {
+               font-weight: 700;
+               text-decoration: underline;
+               cursor: pointer;
+            }
+         }
+      }
+   }
+}
+
+.voz-video {
+   position:relative;
+   padding-top: 56%;
+   iframe {
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+   }
+
+   @media screen and (min-width: 768px) {
+      height: 500px;
+   }
+}
+
+.voz-detalle {
+   .title {
+      font-size: 1.875rem;
+      margin-bottom: .5rem;
+   }
+   .subtitle {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 700;
+   }
+   p {
+      color: variables.$black;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+   }
+}
+
+.otras-voces {
+   .flickity-slider {
+      & > div {
+         max-width: 100%;
+      }
+   }
+   .flickity-prev-next-button {
+      display: none;
+   }
+}
+
+.modal-voz {
+   .modal-content {
+      border-radius: 0;
+   }
+
+   .modal-body {
+      padding: 1.5rem;
+   }
+}
+
+// Nosotros
+.nosotros {
+   &-desc {
+      display: flex;
+      flex-wrap: wrap;
+      & > div {
+         width: 100%;
+      }
+
+      @media screen and (min-width: 1200px) {
+         & > div {
+            width: 50%;
+         }
+
+         &:nth-child(odd) {
+            flex-direction: row-reverse;
+         }
+         &:nth-child(even) {
+            flex-direction: row;
+         }
+      }
+   }
+   
+   &-text {
+      background-color: rgba(variables.$orange, 0.5);
+      color: variables.$black;
+      padding: 2rem;
+
+      p {
+         .collapsing {
+            transition: none;
+          }
+      }
+
+      @media screen and (min-width: 768px) {
+         padding: 4rem 6rem;
+      }
+   }
+   &-img {
+      img {
+         object-fit: cover;
+         max-height: 400px;
+         height: 100%;
+         width: 100%;
+      }
+
+      @media screen and (min-width: 992px) {
+         img {
+            max-height: 100%;
+         }
+      }
+   }
+
+}
+
+// Formulario contacto
+.contacto {
+   background: url(./../img/form-bg.png) center/cover no-repeat;
+   &-form {
+      margin: 0 auto;
+      max-width: 320px;
+   }
+}
